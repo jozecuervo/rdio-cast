@@ -1,0 +1,20 @@
+<doctype html><html><head></head><body id="body">
+  <script src="https://www.rdio.com/api/api.js?client_id=o6pozsm365ennienerfu6tjcvm"></script>
+  <script>
+  function publishToken (){
+    alert(R._accessToken);
+  }
+  R.ready(function() {
+    if (!R.authenticated()){
+      R.authenticate(function(nowAuthenticated) {
+        if (nowAuthenticated) {
+          $('.unauthenticated-view').hide();
+          publishToken();
+        }
+      });
+    } else {
+      publishToken();
+    }
+  });
+</script>
+</body>
